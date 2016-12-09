@@ -24,7 +24,7 @@ class Fairs extends Component {
   render() {
     return(
       <div className="nav">
-      <h1>hello</h1>
+      <FairsList />
       </div>
     );
   }
