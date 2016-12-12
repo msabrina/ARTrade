@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
-// import { broswerHistory, Router }
-// import routes from './routes';
+// import App from './components/App.jsx';
+import { browserHistory, Router } from 'react-router';
+import routes from './routes';
 
-ReactDOM.render(<App />, document.querySelector('#root-container'));
+ReactDOM.render(
+  <Router routes={routes} history={browserHistory} />,
+  document.querySelector('#root-container')
+);
