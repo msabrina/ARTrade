@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Router, Route, Link } from 'react-router';
 import styles from './Artists.css';
 import CreatePost from './CreatePost/CreatePost.jsx';
 
@@ -10,6 +11,8 @@ class Artists extends Component {
           <CreatePost
             appendNewProduct={this.props.appendNewProduct}
           />
+          <Link className="MyPost" to="/MyPost" />
+
         </div>
       </div>
     );

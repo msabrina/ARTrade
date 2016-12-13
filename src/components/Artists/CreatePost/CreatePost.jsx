@@ -12,7 +12,7 @@ constructor(props) {
       description: '',
       price: '',
       imageCount: 0,
-      filesArray: null,
+      filesArray: [],
       imageShow: null,
     };
   }
@@ -57,9 +57,10 @@ constructor(props) {
     form.append('title', this.state.title);
     form.append('description', this.state.description);
     form.append('price', this.state.price);
-    this.state.filesArray.forEach((file) => form.append(file.title, file.pic));
+    // form.append('image', this.state.image);
+    this.state.filesArray.forEach((file) => form.append('image', file.pic));
     const token = localStorage.getItem('userAuthToken');
-    fetch('/api/v1/products', {
+    fetch('/api/artists/mypost', {
       headers: new Headers ({
         Token_Authorization: token,
       }),
@@ -69,7 +70,7 @@ constructor(props) {
     .then(r => r.json())
     .then((product) => {
       console.log(product);
-      this.props.appendNewProduct(product);
+      // this.props.appendNewProduct(product);
     })
     .catch(err => console.log(err));
   }
@@ -116,12 +117,11 @@ constructor(props) {
           <p>Description:</p>
           <textarea value={this.state.description} onChange={this.descChange.bind(this)}/>
         </div>
-        <button onClick={this.postProduct.bind(this)}>This is the button we need to click</button>
+        <button onClick={this.postProduct.bind(this)}>Submit</button>
       </div>
     );
   }
 }
-
 
 export default CreatePost;
         // <showImages files={this.state.files} />

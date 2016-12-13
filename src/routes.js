@@ -6,16 +6,16 @@ import Artists from './components/Artists/Artists.jsx';
 import Header from './components/Header/Header.jsx';
 import Users from './components/Users/Users.jsx';
 import UserAuth from './components/UserAuth/UserAuth.jsx';
+import FairList from './components/Header/Fairs/FairsList/FairsList.jsx';
 
 module.exports = (
   <Route path='/' component={App}>
     <IndexRoute component={HomePage} />
-    <Route path='/UserAuth' component={UserAuth} />
-  <Route path='/app'>
-    <IndexRoute component={App} />
-    <Route path='/users' component={Users} />
-    <Route path='/artists' component={Artists} />
-    <Route path='/Header' component={Header} />
-  </Route>
+    <Route path='/app'>
+      <IndexRoute component={App} />
+      <Route path='/users' component={Users} />
+      <Route path='/artists' component={Artists} />
+      <Route path='/fair/:id' component={FairList} />
+    </Route>
   </Route>
 );

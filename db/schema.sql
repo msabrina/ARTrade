@@ -30,9 +30,21 @@ CREATE TABLE users (
 
 CREATE TABLE fairs (
   fair_id SERIAL UNIQUE PRIMARY KEY,
+  title VARCHAR NOT NULL,
   dates VARCHAR(255) NOT NULL,
   address VARCHAR(255) NOT NULL,
   description TEXT NOT NULL
+);
+
+CREATE TABLE post (
+  post_id SERIAL UNIQUE PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL,
+  user_id INT NOT NULL,
+  price REAL NOT NULL,
+  image_count INT NOT NULL,
+  watch_count INT NOT NULL DEFAULT 0,
+  created_date DATE NOT NULL DEFAULT now()
 );
 
 COMMIT;

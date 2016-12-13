@@ -5,29 +5,24 @@ import styles from './App.css';
 // import Fairs from './Fairs/Fairs.jsx';
 import UserAuth from './UserAuth/UserAuth.jsx';
 import Header from './Header/Header.jsx';
+import FairsList from './Header/Fairs/FairsList/FairsList.jsx';
 
-const showLoginModal = isLoggedIn => {
-  if (isLoggedIn) {
-    return (
-      <UserAuth />
-    );
-  }
-}
+// const showLoginModal = isLoggedIn => {
+//   if (isLoggedIn) {
+//     return (
+//       <UserAuth />
+//     );
+//   }
+// }
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       userData: {},
-      fairs: [
-        // {name: 'Art basel'},
-        // {name: 'Art basel'},
-        // {name: 'Art basel'},
-        // {name: 'Art basel'},
-        // {name: 'Art basel'},
-        // {name: 'Art basel'}
-      ],
-      activeFair: {}
+      fairs: [],
+      activeFair: {},
+      image: '',
       // history:[<put main component here />],
       // current: <current component />
     };
@@ -80,17 +75,12 @@ class App extends Component {
   }
 
   getFairsList() {
+    console.log('RETRIEVING')
     const token = localStorage.getItem('userAuthToken');
-    fetch('/api/fairs', {
-      headers: new Headers ({
-        Token_Authorization: token,
-        'Content-Type': 'application/json',
-      }),
-      method: 'GET',
-    })
+    fetch('/api')
     .then(r => r.json())
     .then((data) => {
-      console.log(data);
+      console.log('====',data);
       this.setState({
         fairs: data,
         activeFair: data[0],
@@ -99,19 +89,37 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
+  appendNewProduct(image) {
+    const allImages = this.state.images;
+    allProducts.push(image);
+    this.setState({
+      products: allProducts,
+    });
+  }
+
   // mutator function changes slected product
   // Code acquired from FireHouse lab.
   changeFair(item) {
     console.log('hello',item);
     this.setState({
-      activeProduct: item,
+      activeFair: this.state.fairs[item]
     });
-    browserHistory.push('/fairs')
+    browserHistory.push('/fair');
   }
+
+  // click(i) {
+  //   this.setState({
+  //     activeFair: this.state.fairs[i],
+  //   });
+  // }
 
   render() {
     return (
       <div>
+        <Header
+          fairs={this.state.fairs}
+          changeFair={this.changeFair.bind(this)}
+        />
         {this.props.children && React.cloneElement(this.props.children, {
           firstName: this.state.firstName,
           lastName: this.state.lastName,
@@ -121,6 +129,7 @@ class App extends Component {
           changeFair: this.state.changeFair,
           getFairsList: this.state.getFairsList,
           displayFairsList: this.state.displayFairsList,
+          activeFair: this.state.activeFair,
         })
         }
 
@@ -137,3 +146,22 @@ export default App;
         // {showLoginModal(this.state.isLoggedIn)}
         // <Artists />
         // <input type="text" />
+
+
+
+
+
+      // <FairList
+        // title={this.state.activeFair.title}
+        // description={this.state.activeFair.description}
+        // images={this.state.activeFair.images}
+        // clickMethod={this.click.bind(this)}
+      // />
+
+      /*
+        <FairsList
+          title={this.state.activeFair.title}
+          description={this.state.activeFair.description}
+          images={this.state.activeFair.images}
+        />
+        */

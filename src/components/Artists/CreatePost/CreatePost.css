@@ -1,0 +1,12 @@
+.create-post {
+  margin-left: 10%;
+}
+
+.create-post p {
+  color: black;
+}
+
+.uploaded-image {
+  max-height: 20%;
+  max-width: 20%;
+}

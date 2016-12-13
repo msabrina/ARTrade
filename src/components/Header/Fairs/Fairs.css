@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+}
+
+.nav {
+  background-color: #FEDC3D;
+  height: 8vh;
+  width: 100%;
+  margin-top: 6%;
+}
+
+.nav-content {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  top: 40%;
+  position: relative;
+  font-size: 28px;
+
+}

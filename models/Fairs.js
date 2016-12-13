@@ -3,9 +3,10 @@ const jwt = require('jsonwebtoken');
 
 
 function getAllFairs(req, res, next) {
-
+  console.log('FETCHING FROM MODEL')
   db.any('SELECT * FROM fairs;')
     .then((fairs) => {
+      console.log('THIS IS FROM THE MODEL ' + fairs)
       res.rows = fairs;
       next();
     })
@@ -28,5 +29,4 @@ function getOneFair (req, res, next) {
 module.exports = {
   getAllFairs,
   getOneFair
-
 }

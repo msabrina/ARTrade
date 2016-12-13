@@ -97,15 +97,14 @@ class HomePage extends Component {
   render() {
     return (
       <div className={styles["home-page"]}>
-      <div className={styles["auth-home"]}>
-      <form className={styles['log-box']}>
-        <div className={styles["home-logo"]}>
-          <img src="" alt="Logo" />
-          <h1>ARTrade</h1>
-        </div>
-        <div className={styles['home-about']}>
+        <div className={styles["home-header"]}>
+          <img src="" alt="" />
+          <h1 className={styles["ARTrade"]}>ARTrade</h1>
           <p>The most comprehensive forum for International Art Fairs!</p>
-        <div className={styles['input-box']}>
+        </div>
+        <div className={styles['content-box']}>
+          <div className={styles['log-user']}>
+            <h1>Log In</h1>
           <div className={styles['email-box']}>
             <p id={styles['email']}>Email</p>
             <input
@@ -124,62 +123,46 @@ class HomePage extends Component {
               onChange={this.updatePasswordForm.bind(this)}
             />
           </div>
-          <button><Link className={styles['app-button']} to="/app"> Log In </Link></button>
-        </div>
-        </div>
-      </form>
-          <div className={styles['link']}>
-            <Link className={styles['home-button']} to="/create"><button>Create Account</button></Link>
-            <Link className={styles['home-button']} to="/login"><button>Log In</button></Link>
+          <button><Link className={styles['log-button']} to="/artists"> Log In </Link></button>
           </div>
-      </div>
 
-      <div className={styles['create-user']}>
-        <div className={styles["home-logo"]}>
-          <img src="/chairShare.png" alt="Logo" />
-      </div>
-      <div className={styles["home-content"]}>
-          <h2>Sign Up</h2>
-        <div className={styles["home-input"]}>
-          <p>First Name</p>
-          <input
-            type="text"
-            name="firstName"
-            placeholder="First Name"
-            value={this.state.firstName}
-            onChange={this.updateNameForm.bind(this)} />
+        <div className={styles['create-user']}>
+          <h1>Create Account</h1>
+            <p>First Name</p>
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              value={this.state.firstName}
+              onChange={this.updateNameForm.bind(this)}
+            />
+            <p>Last Name</p>
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              value={this.state.lastName}
+              onChange={this.updateLastForm.bind(this)} />
+            <p>Email</p>
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.updateEmailForm.bind(this)}
+            />
+            <p>Password</p>
+            <input
+              type="password"
+              name="password"
+              placeholder="password"
+              value={this.state.password}
+              onChange={this.updatePasswordForm.bind(this)}
+            />
+            <Link className={styles['login']} to="/artists"><button> Submit </button></Link>
         </div>
-        <div className={styles["home-input"]}>
-          <p>Last Name</p>
-          <input
-            type="text"
-            name="lastName"
-            placeholder="Last Name"
-            value={this.state.lastName}
-            onChange={this.updateLastForm.bind(this)} />
-        </div>
-        <div className={styles["home-input"]}>
-          <p>Email</p>
-          <input
-            type="text"
-            name="email"
-            placeholder="Email"
-            value={this.state.email}
-          />
-        </div>
-        <div className={styles["home-input"]}>
-          <p>Password</p>
-          <input
-            type="password"
-            name="password"
-            placeholder="password"
-            value={this.state.password}
-            onChange={this.updatePasswordForm.bind(this)} />
-        </div>
-      <Link className={styles['login']} to="/app"><button> Submit </button></Link>
       </div>
-      </div>
-      </div>
+    </div>
     );
   }
 }
