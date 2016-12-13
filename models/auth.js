@@ -3,7 +3,7 @@
 const bcrypt = require('bcrypt');
 const auth = require('../lib/auth.js');
 const jwt = require('jsonwebtoken');
-const db = require('../db/db.js');
+const db = require('../db/db');
 
 
 
