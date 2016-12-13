@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const db = require('../db/db.js');
+const db = require('../lib/db.js');
 const artistsRouter = require('./artists.js');
 
 const { getAllFairs } = require('../models/Fairs');

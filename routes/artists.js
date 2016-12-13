@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const db = require('../db/db.js');
+const db = require('../lib/db.js');
 const { createPost } = require('../models/artists');
 
 const path = require('path');

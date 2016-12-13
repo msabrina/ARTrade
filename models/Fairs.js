@@ -1,4 +1,4 @@
-const db = require('../db/db.js');
+const db = require('../lib/db.js');
 const jwt = require('jsonwebtoken');
 
 
