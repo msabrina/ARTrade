@@ -9,13 +9,13 @@ import UserAuth from './components/UserAuth/UserAuth.jsx';
 import FairList from './components/Header/Fairs/FairsList/FairsList.jsx';
 
 module.exports = (
-  <Route path='/' component={App}>
+  <Route path='/'>
     <IndexRoute component={HomePage} />
-    <Route path='/app'>
-      <IndexRoute component={App} />
+    <Route path='/app' component={App}>
       <Route path='/users' component={Users} />
       <Route path='/artists' component={Artists} />
-      <Route path='/fair/:id' component={FairList} />
+      <Route path='/fair' component={FairList} />
     </Route>
   </Route>
 );
+      // <IndexRoute component={App} />

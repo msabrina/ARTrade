@@ -2,7 +2,7 @@ BEGIN;
 
 DROP TABLE IF EXISTS artists;
 DROP TABLE IF EXISTS fairs;
-DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS post;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS artwork;
 
@@ -40,10 +40,7 @@ CREATE TABLE post (
   post_id SERIAL UNIQUE PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
   description TEXT NOT NULL,
-  user_id INT NOT NULL,
-  price REAL NOT NULL,
-  image_count INT NOT NULL,
-  watch_count INT NOT NULL DEFAULT 0,
+  image_url VARCHAR(255),
   created_date DATE NOT NULL DEFAULT now()
 );
 

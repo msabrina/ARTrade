@@ -1,11 +1,17 @@
 const router = require('express').Router();
 const db = require('../db/db.js');
+const { createPost } = require('../models/artists');
 
 const path = require('path');
 
 function sendAsJSON (req, res, next) {
   res.json(res.rows);
 }
+
+// router.route('/myposts')
+//   .post(createPost, (req, res, next) =>
+//     res.json({message: "post created"})
+//   )
 
 const aws = require('aws-sdk');
 const fs = require('fs')
@@ -37,7 +43,7 @@ function doUpload(req, res, next) {
     // get the file from the req object
   const objFile = req.file;
 
-    // create our own random id
+    // create random id
   const newId = '1000' + parseInt(Math.random() * 10000000);
 
   // call the function uploadToS3 and send an anonymous function as third argument
@@ -57,7 +63,8 @@ function doUpload(req, res, next) {
 }
 
 router.route('/mypost')
-  .post(upload.single('image'), doUpload, artistModel.createPost, (req, res, next) => {res.json(res.urlFile)})
+  .post(upload.single('image'), doUpload, createPost, (req, res, next) => {res.json(res.rows)})
 
 module.exports = router;
 
+// artistModel.createPost
