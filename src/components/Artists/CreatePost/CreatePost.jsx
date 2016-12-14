@@ -14,6 +14,7 @@ constructor(props) {
       imageCount: 0,
       filesArray: [],
       imageShow: null,
+      selectValue: '',
     };
   }
 // function to set the state of the input fields and send it back up to app
@@ -56,8 +57,8 @@ constructor(props) {
     const form = new FormData();
     form.append('title', this.state.title);
     form.append('description', this.state.description);
-    form.append('price', this.state.price);
-    // form.append('image', this.state.image);
+    form.append('image_url', this.state.image);
+    form.append('fair_id', this.state.selectValue);
     this.state.filesArray.forEach((file) => form.append('image', file.pic));
     const token = localStorage.getItem('userAuthToken');
     fetch('/api/artists/mypost', {
@@ -93,6 +94,17 @@ constructor(props) {
     });
   }
 
+  buildOptions() {
+    const fairs = this.props.fairs;
+    return fairs.map((fair, i) => <option key={i} value={fair.fair_id}>{fair.title}</option>)
+  }
+
+  selectChange(e) {
+    this.setState({
+      selectValue: e.target.value,
+    });
+  }
+
   render() {
     return (
       <div className={styles["create-post"]}>
@@ -117,10 +129,16 @@ constructor(props) {
           <p>Description:</p>
           <textarea value={this.state.description} onChange={this.descChange.bind(this)}/>
         </div>
+        <div className={styles['quests']}>
+          <select value={this.state.selectValue} onChange={this.selectChange.bind(this)}>
+            {this.buildOptions()}
+          </select>
+        </div>
         <button onClick={this.postProduct.bind(this)}>Submit</button>
       </div>
     );
   }
+
 }
 
 export default CreatePost;

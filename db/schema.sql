@@ -1,7 +1,7 @@
 BEGIN;
 
 DROP TABLE IF EXISTS artists;
-DROP TABLE IF EXISTS fairs;
+DROP TABLE IF EXISTS fairs CASCADE;
 DROP TABLE IF EXISTS post;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS artwork;
@@ -42,7 +42,19 @@ CREATE TABLE post (
   description TEXT NOT NULL,
   image_url VARCHAR(255),
   created_date DATE NOT NULL DEFAULT now()
+  fair_id INT REFERENCES fairs(fair_id)
 );
+
+-- CREATE TABLE image (
+--   image_id SERIAL UNIQUE PRIMARY KEY,
+--   url VARCHAR(255) NOT NULL,
+--   upload_date DATE NOT NULL DEFAULT now(),
+-- );
+
+-- CREATE TABLE image_post_ref (
+--   post_id INT NOT NULL,
+--   image_id INT NOT NULL
+-- );
 
 COMMIT;
 

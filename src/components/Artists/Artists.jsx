@@ -9,10 +9,10 @@ class Artists extends Component {
       <div>
         <div className={styles["app"]}>
           <CreatePost
+            fairs={this.props.fairs}
             appendNewProduct={this.props.appendNewProduct}
           />
           <Link className="MyPost" to="/MyPost" />
-
         </div>
       </div>
     );
