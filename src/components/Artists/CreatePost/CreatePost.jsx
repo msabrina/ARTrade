@@ -117,19 +117,19 @@ constructor(props) {
           <p>Price:</p>
           <input type="text" value={this.state.price} onChange={this.priceChange.bind(this)}/>
         </div>
-        <p>Images:</p>
-        <DropZone
-          className={styles['drop-zone']}
-          multiple={true}
-          accept="image/*"
-          onDrop={this.onImageDrop.bind(this)}>
-        </DropZone>
-        {this.state.imageShow || ''}
         <div className={styles['description-box']}>
           <p>Description:</p>
           <textarea value={this.state.description} onChange={this.descChange.bind(this)}/>
         </div>
-        <div className={styles['quests']}>
+        <div className={styles['image-drop']}>
+          <p>Images:</p>
+          <DropZone
+            className={styles['drop-zone']}
+            multiple={true}
+            accept="image/*"
+            onDrop={this.onImageDrop.bind(this)}>
+          </DropZone>
+          {this.state.imageShow || ''}
           <select value={this.state.selectValue} onChange={this.selectChange.bind(this)}>
             {this.buildOptions()}
           </select>

@@ -1,15 +1,24 @@
 .create-post {
-  margin-left: 10%;
+  margin-left: 7%;
   background-color: #CDCDCD;
-
-
-}
-
-.create-post p {
   display: flex;
-  flex-direction: row;
-  color: black;
+  flex-flow: wrap column;
+  height: 50vh;
+  width: 40%;
+  border: 5px solid black;
 }
+
+.create-post h1, p {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+  color: #C06014;
+  margin-top: 2%;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 .uploaded-image {
   max-height: 20%;

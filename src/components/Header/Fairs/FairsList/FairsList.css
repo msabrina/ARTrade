@@ -1,13 +1,13 @@
 .desc {
   background: red;
-  border: 5 px solid black;
+  border: 5px solid black;
   color: white;
   font-size: 56px;
   font-weight: 800;
 }
 
 .fair-list {
-  background: pink;
+  background-color: #EDDBCD;
   position: relative;
   top: 300px;
   /*padding-top: 300px;*/

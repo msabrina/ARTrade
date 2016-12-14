@@ -1,8 +1,14 @@
+body {
+  background-color: #CDCDCD;
+
+}
 .app {
-    background-color: #CDCDCD;
+  background-color: #CDCDCD;
 
 }
 
 .myPost {
   margin-right: 20vh;
+  background-color: #CDCDCD;
+
 }
