@@ -3,7 +3,12 @@ import FairsList from './FairsList/FairsList.jsx';
 import styles from './Fairs.css';
 
 class Fairs extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+    activeFair: {},
+    }
+  }
   // displayFairsList() {
   //   console.log(this.props, 'hayy');
   //   return this.props.fairsArr.map((item, i) =>

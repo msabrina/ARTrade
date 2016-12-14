@@ -7,8 +7,11 @@
 }
 
 .fair-list {
+  display: flex;
   background-color: #EDDBCD;
   position: relative;
-  top: 300px;
+  width: 45%;
+  float: right;
+  /*top: 300px;*/
   /*padding-top: 300px;*/
 }

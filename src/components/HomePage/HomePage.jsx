@@ -158,7 +158,7 @@ class HomePage extends Component {
               value={this.state.password}
               onChange={this.updatePasswordForm.bind(this)}
             />
-            <Link className={styles['login']} to="/artists"><button> Submit </button></Link>
+            <Link className={styles['login']} to="/fair"><button> Submit </button></Link>
         </div>
       </div>
     </div>

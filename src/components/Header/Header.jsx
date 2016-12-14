@@ -5,14 +5,17 @@ import styles from './Header.css';
 import FairList from './Fairs/FairsList/FairsList.jsx'
 
 class Header extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     fairs: this.props.fairs,
-  //   }
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeFair: {},
+    }
+  }
 
   render() {
+    // const fairsArr = this.props.fairs.map((item, i) =>
+    //   <div key={i} onClick={() => this.props.changeFair(i)}>{item.title}</div>
+    // )
     return (
       <div className={styles["header-container"]}>
         <div className={styles["home-header"]}>
@@ -22,10 +25,12 @@ class Header extends Component {
       <Fairs
         fairs={this.props.fairs}
         changeFair={this.props.changeFair}
+        activeFair={this.props.activeFair}
+        // {fairsArr}
       />
       <Link to='/artists'>Create Post</Link>
       </div>
-    )
+    );
   }
 }
 

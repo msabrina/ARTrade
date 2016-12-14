@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory, Router, Route, Link } from 'react-router';
 import styles from './App.css';
-// import Artists from './Artists/Artists.jsx';
+import Artists from './Artists/Artists.jsx';
 // import Fairs from './Fairs/Fairs.jsx';
 import UserAuth from './UserAuth/UserAuth.jsx';
 import Header from './Header/Header.jsx';
@@ -119,6 +119,9 @@ class App extends Component {
         <Header
           fairs={this.state.fairs}
           changeFair={this.changeFair.bind(this)}
+        />
+        <Artists
+          fairs={this.state.fairs}
         />
         {this.props.children && React.cloneElement(this.props.children, {
           firstName: this.state.firstName,
