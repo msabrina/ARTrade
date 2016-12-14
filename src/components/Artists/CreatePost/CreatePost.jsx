@@ -58,7 +58,7 @@ constructor(props) {
     form.append('title', this.state.title);
     form.append('description', this.state.description);
     form.append('image_url', this.state.image);
-    form.append('fair_id', this.state.selectValue);
+    form.append('image', this.state.image);
     this.state.filesArray.forEach((file) => form.append('image', file.pic));
     const token = localStorage.getItem('userAuthToken');
     fetch('/api/artists/mypost', {

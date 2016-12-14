@@ -99,8 +99,7 @@ class HomePage extends Component {
       <div className={styles["home-page"]}>
         <div className={styles["home-header"]}>
           <img src="" alt="" />
-          <h1 className={styles["ARTrade"]}>ARTrade</h1>
-          <p>The most comprehensive forum for International Art Fairs!</p>
+          <h1 className={styles["ARTrade"]}>ARTrade: &#x2765; </h1>
         </div>
         <div className={styles['content-box']}>
           <div className={styles['log-user']}>

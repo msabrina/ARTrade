@@ -1,8 +1,13 @@
 .create-post {
   margin-left: 10%;
+  background-color: #CDCDCD;
+
+
 }
 
 .create-post p {
+  display: flex;
+  flex-direction: row;
   color: black;
 }
 
@@ -10,3 +15,4 @@
   max-height: 20%;
   max-width: 20%;
 }
+

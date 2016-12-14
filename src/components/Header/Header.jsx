@@ -15,11 +15,10 @@ class Header extends Component {
   render() {
     return (
       <div className={styles["header-container"]}>
-      <div className={styles["home-header"]}>
-        <img src="" alt="" />
-        <h1 className={styles["ARTrade"]}>ARTrade</h1>
-        <p>The most comprehensive forum for International Art Fairs!</p>
-      </div>
+        <div className={styles["home-header"]}>
+          <img src="" alt="" />
+          <h1 className={styles["ARTrade"]}>ARTrade: &#x2765; </h1>
+        </div>
       <Fairs
         fairs={this.props.fairs}
         changeFair={this.props.changeFair}

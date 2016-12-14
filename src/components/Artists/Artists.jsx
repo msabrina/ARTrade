@@ -12,7 +12,7 @@ class Artists extends Component {
             fairs={this.props.fairs}
             appendNewProduct={this.props.appendNewProduct}
           />
-          <Link className="MyPost" to="/MyPost" />
+          <Link className="myPost" to="/MyPost" />
         </div>
       </div>
     );

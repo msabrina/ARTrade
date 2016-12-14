@@ -148,9 +148,6 @@ export default App;
         // <input type="text" />
 
 
-
-
-
       // <FairList
         // title={this.state.activeFair.title}
         // description={this.state.activeFair.description}
@@ -158,10 +155,5 @@ export default App;
         // clickMethod={this.click.bind(this)}
       // />
 
-      /*
-        <FairsList
-          title={this.state.activeFair.title}
-          description={this.state.activeFair.description}
-          images={this.state.activeFair.images}
-        />
-        */
+
+
