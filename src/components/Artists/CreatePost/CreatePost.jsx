@@ -15,6 +15,7 @@ constructor(props) {
       filesArray: [],
       imageShow: null,
       selectValue: '',
+      fair_id: 1,
     };
   }
 // function to set the state of the input fields and send it back up to app
@@ -59,6 +60,7 @@ constructor(props) {
     form.append('description', this.state.description);
     form.append('image_url', this.state.image);
     form.append('image', this.state.image);
+    form.append('fair_id', this.state.fair_id);
     this.state.filesArray.forEach((file) => form.append('image', file.pic));
     const token = localStorage.getItem('userAuthToken');
     fetch('/api/artists/mypost', {
@@ -71,7 +73,12 @@ constructor(props) {
     .then(r => r.json())
     .then((product) => {
       console.log(product);
-      // this.props.appendNewProduct(product);
+      this.props.appendNewImage(product.image_url, product.fair_id)
+      this.setState({
+        imageCount: 0,
+        filesArray: [],
+        imageShow: null,
+      })
     })
     .catch(err => console.log(err));
   }
@@ -101,7 +108,7 @@ constructor(props) {
 
   selectChange(e) {
     this.setState({
-      selectValue: e.target.value,
+      fair_id: e.target.value,
     });
   }
 
@@ -130,7 +137,7 @@ constructor(props) {
             onDrop={this.onImageDrop.bind(this)}>
           </DropZone>
           {this.state.imageShow || ''}
-          <select value={this.state.selectValue} onChange={this.selectChange.bind(this)}>
+          <select value={this.state.fair_id} onChange={this.selectChange.bind(this)}>
             {this.buildOptions()}
           </select>
         </div>

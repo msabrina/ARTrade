@@ -65,6 +65,9 @@ function doUpload(req, res, next) {
 router.route('/mypost')
   .post(upload.single('image'), doUpload, createPost, (req, res, next) => {res.json(res.rows)})
 
+// router.route('/allfairs')
+//   .get(getFairs, getPosts, (req,res) => res.json(res.data));
+
 module.exports = router;
 
 // artistModel.createPost

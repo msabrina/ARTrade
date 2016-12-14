@@ -21,8 +21,14 @@ class App extends Component {
     this.state = {
       userData: {},
       fairs: [],
-      activeFair: {},
+      merged: [],
+      activeFair: {
+        posts: [],
+        fair: [],
+      },
       image: '',
+      image_url: 'testing',
+      fair_id: '',
       // history:[<put main component here />],
       // current: <current component />
     };
@@ -81,19 +87,42 @@ class App extends Component {
     .then(r => r.json())
     .then((data) => {
       console.log('====',data);
+      const merged = this.matchPostsToFairs(data.fairs, data.posts);
       this.setState({
-        fairs: data,
-        activeFair: data[0],
+        fairs: data.fairs,
+        posts: data.posts,
+        merged: merged,
+        activeFair: merged[0],
       });
     })
     .catch(err => console.log(err));
   }
 
-  appendNewProduct(image) {
-    const allImages = this.state.images;
-    allProducts.push(image);
+//Thank you Joey Pinhas for this gem!
+  matchPostsToFairs(fairs, posts) {
+    let merged = [];
+
+    fairs.forEach((fair) => {
+      let obj = {};
+      obj.fair = fair;
+      obj.fair_id = fair.fair_id;
+      let thesePosts = [];
+      posts.forEach((post) => {
+        if (post.fair_id == fair.fair_id) {
+          thesePosts.push(post);
+        }
+      });
+      obj.posts = thesePosts;
+      merged.push(obj);
+    });
+    return merged;
+  }
+
+  appendNewImage(image, id) {
+    const fairs = this.state.fairs;
+    fairs[id - 1].image = image;
     this.setState({
-      products: allProducts,
+      fairs: fairs,
     });
   }
 
@@ -102,7 +131,8 @@ class App extends Component {
   changeFair(item) {
     console.log('hello',item);
     this.setState({
-      activeFair: this.state.fairs[item]
+      activeFair: this.state.merged[item],
+      // image: this.state.image[item]
     });
     browserHistory.push('/fair');
   }
@@ -117,11 +147,13 @@ class App extends Component {
     return (
       <div>
         <Header
+          merged={this.state.merged}
           fairs={this.state.fairs}
           changeFair={this.changeFair.bind(this)}
         />
         <Artists
           fairs={this.state.fairs}
+          appendNewImage={this.appendNewImage.bind(this)}
         />
         {this.props.children && React.cloneElement(this.props.children, {
           firstName: this.state.firstName,
@@ -133,6 +165,9 @@ class App extends Component {
           getFairsList: this.state.getFairsList,
           displayFairsList: this.state.displayFairsList,
           activeFair: this.state.activeFair,
+          image: this.state.image,
+          image_url: this.state.image_url,
+          merged: this.state.merged,
         })
         }
 

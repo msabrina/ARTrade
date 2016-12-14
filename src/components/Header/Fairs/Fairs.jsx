@@ -9,6 +9,8 @@ class Fairs extends Component {
     activeFair: {},
     }
   }
+
+
   // displayFairsList() {
   //   console.log(this.props, 'hayy');
   //   return this.props.fairsArr.map((item, i) =>
@@ -28,13 +30,20 @@ class Fairs extends Component {
 
 
   render() {
-     const fairsArr = this.props.fairs.map((item, i) =>
-      <div key={i} onClick={() => this.props.changeFair(i)}>{item.title}</div>
+     const fairsArr = this.props.merged.map((item, i) =>
+      <div key={i} onClick={() => this.props.changeFair(i)}>{item.fair.title}</div>
     );
+
+     // const postArr = this.props.post.map((item, i) =>
+     //  <div key={i} onClick={() => this.props.changeFair(i)}>{item.image_url}</div>
+
+
     return(
       <div className={styles["nav"]}>
         <div className={styles["nav-content"]}>
           {fairsArr}
+
+
         </div>
       </div>
     );

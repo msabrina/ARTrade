@@ -38,10 +38,10 @@ CREATE TABLE fairs (
 
 CREATE TABLE post (
   post_id SERIAL UNIQUE PRIMARY KEY,
-  title VARCHAR(255) NOT NULL,
-  description TEXT NOT NULL,
+  post_title VARCHAR(255) NOT NULL,
+  post_description TEXT NOT NULL,
   image_url VARCHAR(255),
-  created_date DATE NOT NULL DEFAULT now()
+  created_date DATE NOT NULL DEFAULT now(),
   fair_id INT REFERENCES fairs(fair_id)
 );
 

@@ -23,7 +23,7 @@ class Header extends Component {
           <h1 className={styles["ARTrade"]}>ARTrade: &#x2765; </h1>
         </div>
       <Fairs
-        fairs={this.props.fairs}
+        merged={this.props.merged}
         changeFair={this.props.changeFair}
         activeFair={this.props.activeFair}
         // {fairsArr}

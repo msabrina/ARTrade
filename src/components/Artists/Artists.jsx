@@ -10,7 +10,7 @@ class Artists extends Component {
         <div className={styles["app"]}>
           <CreatePost
             fairs={this.props.fairs}
-            appendNewProduct={this.props.appendNewProduct}
+            appendNewImage={this.props.appendNewImage}
           />
           <Link className="myPost" to="/MyPost" />
         </div>

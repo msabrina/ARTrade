@@ -5,7 +5,7 @@ const { LogIn,
         getUserPosts,
         getUserData,
         deleteUser
-      } = require('../models/auth');
+      } = require('../models/auth.js');
 
 function sendAsJSON (req, res, next) {
   res.json(res.rows);
