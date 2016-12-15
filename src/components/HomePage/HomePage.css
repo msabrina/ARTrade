@@ -74,8 +74,8 @@ input {
 
 }
 
-button {
-  background-color: ;
+a .log-button, .login-button {
+  background-color: #CDCDCD;
   height: 10px;
 }
 

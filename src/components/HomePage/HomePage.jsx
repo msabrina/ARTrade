@@ -127,7 +127,7 @@ class HomePage extends Component {
               onChange={this.updatePasswordLogIn.bind(this)}
             />
           </div>
-          <button><Link className={styles['log-button']} to="/fair"> Log In </Link></button>
+          <button className={styles['log-button']}><Link className={styles['log-button']} to="/fair"> Log In </Link></button>
           </div>
 
         <div className={styles['create-user']}>
@@ -163,7 +163,7 @@ class HomePage extends Component {
               value={this.state.password}
               onChange={this.updatePasswordForm.bind(this)}
             />
-            <Link className={styles['login']} to="/fair"><button> Submit </button></Link>
+            <button className={styles['login-button']} > <Link className={styles['login-button']} to="/fair"> Submit </Link></button>
         </div>
       </div>
     </div>

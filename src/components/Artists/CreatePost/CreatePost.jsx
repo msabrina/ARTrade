@@ -75,7 +75,7 @@ constructor(props) {
     .then(r => r.json())
     .then((product) => {
       console.log(product);
-      this.props.appendNewImage(product.image_url, product.fair_id, product.title, product.description);
+      this.props.appendNewImage(product.image_url, product.fair_id);
       this.setState({
         imageCount: 0,
         filesArray: [],
