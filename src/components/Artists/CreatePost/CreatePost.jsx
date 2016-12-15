@@ -133,11 +133,11 @@ constructor(props) {
           <p>Title:</p>
           <input type="text" value={this.state.title} onChange={this.titleChange.bind(this)} />
         </div>
-        <div className={styles['description-box']}>
+        <div className={styles["description-box"]}>
           <p>Description:</p>
           <textarea value={this.state.description} onChange={this.descChange.bind(this)}/>
         </div>
-        <button onClick={this.postProduct.bind(this)}>Submit</button>
+        <button className={styles["submit-button"]} onClick={this.postProduct.bind(this)}>Submit</button>
       </div>
     );
   }

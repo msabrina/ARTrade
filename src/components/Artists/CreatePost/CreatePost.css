@@ -1,7 +1,7 @@
-button {
-  height: 20vh;
+.submit-button {
+  height: 100px;
   background-color: #C06014;
-  width: 20px;
+  width: 100px;
 }
 
 .create-post {
@@ -9,7 +9,7 @@ button {
   background-color: #CDCDCD;
   display: flex;
   /*flex-flow: wrap column;*/
-  height: 80vh;
+  height: 100vh;
   width: 25%;
   flex-direction: column;
   margin-top: 80px;
@@ -25,6 +25,11 @@ button {
   margin-top: 2%;
   justify-content: space-around;
   /*align-items: center;*/
+}
+
+.description-box {
+  height: 150px;
+  width: 150px;
 }
 
 .drop-zone {

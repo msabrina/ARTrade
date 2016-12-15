@@ -40,13 +40,13 @@ class HomePage extends Component {
     .catch(err => console.log(err));
   }
 
-  updateEmailForm(e) {
+  updateEmailLogIn(e) {
     this.setState({
       email: e.target.value,
     });
   }
 
-  updatePasswordForm(e) {
+  updatePasswordLogIn(e) {
     this.setState({
       password: e.target.value,
     });
@@ -93,6 +93,12 @@ class HomePage extends Component {
     });
   }
 
+  updateEmailForm(e) {
+    this.setState({
+      email: e.target.value,
+    });
+  }
+
 
   render() {
     return (
@@ -109,7 +115,7 @@ class HomePage extends Component {
               type="text"
               placeholder="Email"
               value={this.state.email}
-              onChange={this.updateEmailForm.bind(this)}
+              onChange={this.updateEmailLogIn.bind(this)}
             />
           </div>
           <div className={styles['password-box']}>
@@ -118,10 +124,10 @@ class HomePage extends Component {
               type="password"
               placeholder="Password"
               value={this.state.password}
-              onChange={this.updatePasswordForm.bind(this)}
+              onChange={this.updatePasswordLogIn.bind(this)}
             />
           </div>
-          <button><Link className={styles['log-button']} to="/artists"> Log In </Link></button>
+          <button><Link className={styles['log-button']} to="/fair"> Log In </Link></button>
           </div>
 
         <div className={styles['create-user']}>
