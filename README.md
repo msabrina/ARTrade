@@ -30,8 +30,8 @@ User auth for the signup/login
 Socket.io
 Image/file upload
 
-![References](/multer.png)
-![References](/AWS-S3.png)
+![References](/db/public/multer.png)
+![References](/db/public/AWS-S3.png)
 
 ### Wireframe links:
 https://wireframe.cc/sSD5yh
