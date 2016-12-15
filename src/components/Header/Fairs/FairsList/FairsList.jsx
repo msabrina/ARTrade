@@ -11,6 +11,7 @@ const FairsList = props => {
     )
   })
 
+
   return (
     <div className={styles["fair-list"]}>
       <div className={styles["fair-item"]} >

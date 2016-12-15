@@ -8,11 +8,13 @@ class Artists extends Component {
     return (
       <div>
         <div className={styles["app"]}>
-          <CreatePost
-            fairs={this.props.fairs}
-            appendNewImage={this.props.appendNewImage}
-          />
-          <Link className="myPost" to="/MyPost" />
+          <div>
+            <CreatePost
+              fairs={this.props.fairs}
+              appendNewImage={this.props.appendNewImage}
+            />
+            <Link className="myPost" to="/MyPost" />
+          </div>
         </div>
       </div>
     );

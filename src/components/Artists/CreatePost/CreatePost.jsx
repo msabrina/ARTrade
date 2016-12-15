@@ -20,6 +20,7 @@ constructor(props) {
   }
 // function to set the state of the input fields and send it back up to app
 
+// Code acquired from React DropZone documentation and decoded by Joey Pinhas.
   onImageDrop (images) {
     // get current image count and array of files and store them in local variables of the same name
     let imageCount = this.state.imageCount;
@@ -55,6 +56,7 @@ constructor(props) {
 
   postProduct(e) {
     e.preventDefault();
+    // create a variable to store the data you are posting in the body
     const form = new FormData();
     form.append('title', this.state.title);
     form.append('description', this.state.description);
@@ -73,7 +75,7 @@ constructor(props) {
     .then(r => r.json())
     .then((product) => {
       console.log(product);
-      this.props.appendNewImage(product.image_url, product.fair_id)
+      this.props.appendNewImage(product.image_url, product.fair_id, product.title, product.description);
       this.setState({
         imageCount: 0,
         filesArray: [],
@@ -125,7 +127,7 @@ constructor(props) {
           </DropZone>
         <div className={styles['image-drop']}>
           {this.state.imageShow || ''}
-          <select value={this.state.fair_id} onChange={this.selectChange.bind(this)}>
+          <select className={styles["select-fairs"]} value={this.state.fair_id} onChange={this.selectChange.bind(this)}>
             {this.buildOptions()}
           </select>
         </div>

@@ -170,7 +170,9 @@ class App extends Component {
           merged: this.state.merged,
         })
         }
-
+        <footer>
+          <h2>&hearts; Sabrina</h2>
+        </footer>
       </div>
     );
   }

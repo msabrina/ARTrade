@@ -18,3 +18,13 @@
   width: 100%;
   background-color: #01ABAA;
 }
+
+footer {
+  height: 10vh;
+  background-color: #EDDBCD;
+  color: #414141;
+  align-items: center;
+  margin-top: 8%;
+  text-align: center;
+  padding: 18px;
+}

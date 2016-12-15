@@ -4,6 +4,8 @@ body {
 }
 .app {
   background-color: #CDCDCD;
+  display: flex;
+  align-self: flex-end;
 
 }
 
