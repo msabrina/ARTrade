@@ -25,11 +25,16 @@ Socket.io
 Image/file upload
 
 ##References 
+Multer NPM
 ![References](/db/public/multer.png)
+
+Amazon Web Services Documentation.
 ![References](/db/public/AWS-S3.png)
 
 ### Wireframe links:
 https://wireframe.cc/sSD5yh
 https://wireframe.cc/2uVaVb
+
+Million thanks to the instructors at GA and all my classmates!
 
 @rapala61 @bobbyking  @jasonseminara @irwin @Trevor 
