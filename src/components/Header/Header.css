@@ -4,20 +4,29 @@
   left: 0;
   display: flex;
   flex-direction: column;
-  height: 14vh;
+  height: 20vh;
   width: 100%;
-  /*background-color: #01ABAA;*/
-  background-color: black;
+  background-color: #414141;
+
   /*margin-top: 2%;*/
 }
 
-.home-header h1, p {
-  margin-left: 2%;
-  color: white;
-}
-
-.home-header h1, p {
+.home-header h1 {
   margin-left: 2%;
   color: #C06014;
-  margin-top: 2%;
+  margin-top: 3%;
+  font-family: 'Lato', sans-serif;
+  font-size: 38px;
+}
+
+a {
+  position: absolute;
+  display: inline-block;
+  float: right;
+  margin-top: -200px;
+  right: 2%;
+  color: #C06014;
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+
 }

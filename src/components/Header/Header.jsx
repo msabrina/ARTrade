@@ -19,7 +19,6 @@ class Header extends Component {
     return (
       <div className={styles["header-container"]}>
         <div className={styles["home-header"]}>
-          <img src="" alt="" />
           <h1 className={styles["ARTrade"]}>ARTrade: &#x2765; </h1>
         </div>
       <Fairs
@@ -28,7 +27,7 @@ class Header extends Component {
         activeFair={this.props.activeFair}
         // {fairsArr}
       />
-      <Link to='/artists'>Create Post</Link>
+      <Link className="create-post" to='/artists'>Create Post</Link>
       </div>
     );
   }

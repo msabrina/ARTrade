@@ -4,7 +4,7 @@
 
 .nav {
   background-color: #CDCDCD;
-  height: 9vh;
+  height: 20vh;
   width: 100%;
   margin-top: 6%;
 }
@@ -16,6 +16,8 @@
   justify-content: space-around;
   top: 40%;
   position: relative;
-  font-size: 28px;
+  font-size: 18px;
   background-color: #EDDBCD;
+  font-family: 'Lato', sans-serif;
+  padding: 10px;
 }

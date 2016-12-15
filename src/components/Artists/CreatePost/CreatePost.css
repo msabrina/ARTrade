@@ -1,11 +1,20 @@
+button {
+  height: 20vh;
+  background-color: #C06014;
+  width: 20px;
+}
+
 .create-post {
   margin-left: 7%;
   background-color: #CDCDCD;
   display: flex;
-  flex-flow: wrap column;
-  height: 50vh;
-  width: 40%;
-  border: 5px solid black;
+  /*flex-flow: wrap column;*/
+  height: 80vh;
+  width: 25%;
+  flex-direction: column;
+  margin-top: 80px;
+
+  /*border: 2px solid black;*/
 }
 
 .create-post h1, p {
@@ -14,14 +23,19 @@
   margin-left: 2%;
   color: #C06014;
   margin-top: 2%;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  /*align-items: center;*/
+}
+
+.drop-zone {
+  height: 100px;
+  width: 100px;
+  border: 3px dotted #C06014;
 }
 
 
-
 .uploaded-image {
-  max-height: 20%;
-  max-width: 20%;
+  max-height: 50%;
+  max-width: 60%;
 }
 

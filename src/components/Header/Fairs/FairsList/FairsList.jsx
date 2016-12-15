@@ -14,10 +14,13 @@ const FairsList = props => {
   return (
     <div className={styles["fair-list"]}>
       <div className={styles["fair-item"]} >
-        <h2>{props.activeFair.fair.title}</h2>
-        <p id={styles['desc']}>{props.activeFair.fair.description}</p>
-        <img src={props.activeFair.fair.image} alt=""/>
-        {posts}
+        <h1>{props.activeFair.fair.title}</h1>
+        <p>{props.activeFair.fair.description}</p>
+        <address>{props.activeFair.fair.address}</address>
+        <div className={styles["image"]}>
+          <img src={props.activeFair.fair.image} alt=""/>
+          {posts}
+        </div>
       </div>
     </div>
   );

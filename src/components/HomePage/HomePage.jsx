@@ -98,7 +98,6 @@ class HomePage extends Component {
     return (
       <div className={styles["home-page"]}>
         <div className={styles["home-header"]}>
-          <img src="" alt="" />
           <h1 className={styles["ARTrade"]}>ARTrade: &#x2765; </h1>
         </div>
         <div className={styles['content-box']}>

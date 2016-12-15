@@ -116,19 +116,6 @@ constructor(props) {
     return (
       <div className={styles["create-post"]}>
         <h1>Create Post:</h1>
-        <div className={styles['title-box']}>
-          <p>Title:</p>
-          <input type="text" value={this.state.title} onChange={this.titleChange.bind(this)} />
-        </div>
-        <div className={styles['price-box']}>
-          <p>Price:</p>
-          <input type="text" value={this.state.price} onChange={this.priceChange.bind(this)}/>
-        </div>
-        <div className={styles['description-box']}>
-          <p>Description:</p>
-          <textarea value={this.state.description} onChange={this.descChange.bind(this)}/>
-        </div>
-        <div className={styles['image-drop']}>
           <p>Images:</p>
           <DropZone
             className={styles['drop-zone']}
@@ -136,10 +123,19 @@ constructor(props) {
             accept="image/*"
             onDrop={this.onImageDrop.bind(this)}>
           </DropZone>
+        <div className={styles['image-drop']}>
           {this.state.imageShow || ''}
           <select value={this.state.fair_id} onChange={this.selectChange.bind(this)}>
             {this.buildOptions()}
           </select>
+        </div>
+        <div className={styles['title-box']}>
+          <p>Title:</p>
+          <input type="text" value={this.state.title} onChange={this.titleChange.bind(this)} />
+        </div>
+        <div className={styles['description-box']}>
+          <p>Description:</p>
+          <textarea value={this.state.description} onChange={this.descChange.bind(this)}/>
         </div>
         <button onClick={this.postProduct.bind(this)}>Submit</button>
       </div>

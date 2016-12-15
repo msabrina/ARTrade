@@ -22,15 +22,23 @@
   height: 14vh;
   width: 100%;
   /*background-color: #01ABAA;*/
-  background-color: black;
+  background-color: #414141;
 
   /*margin-top: 2%;*/
 }
 
-.home-header h1, p {
+.home-header h1 {
   margin-left: 2%;
   color: #C06014;
   margin-top: 2%;
+  font-family: 'Lato', sans-serif;
+}
+
+h1, p {
+/*  margin-left: 2%;
+*/ color: #C06014;
+  /*margin-top: 2%;*/
+  font-family: 'Noto Sans', sans-serif;
 }
 
 
@@ -40,7 +48,6 @@
   background-color: #EDDBCD;
   height: 50vh;
   width: 50%;
-  border: 5px solid black;
 }
 
 .log-user {
@@ -79,7 +86,7 @@ button {
   height: 100%;
   justify-content: center;
   align-items: center;
-  border-left: 5px solid black;
+  border-left: 5px solid #414141;
   color: #C06014;
   justify-content: space-around;
 }

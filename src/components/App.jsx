@@ -3,7 +3,6 @@ import { browserHistory, Router, Route, Link } from 'react-router';
 import styles from './App.css';
 import Artists from './Artists/Artists.jsx';
 // import Fairs from './Fairs/Fairs.jsx';
-import UserAuth from './UserAuth/UserAuth.jsx';
 import Header from './Header/Header.jsx';
 import FairsList from './Header/Fairs/FairsList/FairsList.jsx';
 
@@ -146,6 +145,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans" rel="stylesheet" />
         <Header
           merged={this.state.merged}
           fairs={this.state.fairs}

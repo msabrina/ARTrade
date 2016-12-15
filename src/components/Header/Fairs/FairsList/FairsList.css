@@ -1,14 +1,7 @@
-.desc {
-  background: red;
-  border: 5px solid black;
-  color: white;
-  font-size: 56px;
-  font-weight: 800;
-}
 
 .fair-list {
   display: flex;
-  background-color: #EDDBCD;
+  /*background-color: #EDDBCD;*/
   position: relative;
   width: 45%;
   float: right;
@@ -16,7 +9,17 @@
   /*padding-top: 300px;*/
 }
 
+.fair-item {
+  padding: 10px;
+  overflow: scroll;
+  max-height: 500px;
+  margin-top: -500px;
+  margin-right: 20%;
+}
+
 img {
-  width: 20px;
-  height: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+  height: 100px;
 }

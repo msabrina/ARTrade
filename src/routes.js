@@ -5,7 +5,6 @@ import HomePage from './components/HomePage/HomePage.jsx';
 import Artists from './components/Artists/Artists.jsx';
 import Header from './components/Header/Header.jsx';
 import Users from './components/Users/Users.jsx';
-import UserAuth from './components/UserAuth/UserAuth.jsx';
 import FairList from './components/Header/Fairs/FairsList/FairsList.jsx';
 
 module.exports = (
